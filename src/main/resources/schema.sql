@@ -1,0 +1,33 @@
+CREATE TABLE Curso (
+    Codigo SERIAL PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Descricao VARCHAR(4000) NOT NULL,
+    Duracao INT NOT NULL
+);
+
+CREATE TABLE Funcionario (
+    Codigo SERIAL PRIMARY KEY,
+    Nome VARCHAR(200) NOT NULL,
+    CPF CHAR(11) NOT NULL UNIQUE,
+    Nascimento DATE NOT NULL,
+    Cargo VARCHAR(200) NOT NULL,
+    Admissao DATE NOT NULL,
+    Status BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+CREATE TABLE Turma (
+    Codigo SERIAL PRIMARY KEY,
+    Inicio DATE NOT NULL,
+    Fim DATE NOT NULL,
+    Local VARCHAR(200),
+    Curso INT NOT NULL,
+    CONSTRAINT FK_Curso FOREIGN KEY (Curso) REFERENCES Curso (Codigo) ON DELETE CASCADE
+);
+
+CREATE TABLE TurmaParticipante (
+    Codigo SERIAL PRIMARY KEY,
+    Turma INT NOT NULL,
+    Funcionario INT NOT NULL,
+    CONSTRAINT FK_Turma FOREIGN KEY (Turma) REFERENCES Turma (Codigo) ON DELETE CASCADE,
+    CONSTRAINT FK_Funcionario FOREIGN KEY (Funcionario) REFERENCES Funcionario (Codigo) ON DELETE CASCADE
+);
