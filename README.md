@@ -1,7 +1,7 @@
 # Sistema de Cursos para Java Spring Backend
 
 ## Descrição Geral
-Uma API RESTful desenvolvida em Java com Spring Boot e JDBC para gerenciar cursos, turmas de treinamento e participantes. Implementa CRUD e segue as regras de negócio assim como foram descritas no escopo da tarefa.
+Uma API RESTful desenvolvida em Java com Spring Boot e JDBC para gerenciar cursos, turmas de treinamento e participantes. Implementa CRUD e segue as regras de negócio assim como foram descritas no escopo da tarefa. 
 
 ## Foram Utilizado
 - Java 17
